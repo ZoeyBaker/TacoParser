@@ -5,6 +5,7 @@ namespace LoggingKata.Test
 {
     public class TacoParserTests
     {
+
         [Fact]
         public void ShouldDoSomething()
         {
@@ -15,6 +16,7 @@ namespace LoggingKata.Test
 
             //Act
             var actual = tacoParser.Parse("34.073638, -84.677017, Taco Bell Acwort...");
+      
 
             //Assert
             Assert.NotNull(actual);
@@ -31,9 +33,15 @@ namespace LoggingKata.Test
 
             //Arrange
 
+            var tester = new TacoParser();
+
             //Act
 
+            var acutal = tester.Parse(line);
+         
+
             //Assert
+            Assert.Equal(expected, acutal.Location.Longitude);
         }
 
 
